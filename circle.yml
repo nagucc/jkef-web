@@ -3,7 +3,7 @@ machine:
     - docker
 dependencies:
   override:
-    - docker build -f docker/DOckerfile.build .
+    - docker build -f docker/Dockerfile.build .
 test:
   override:
-    - curl http://localhost:9000
+    - cd dist && ls
