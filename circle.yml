@@ -1,9 +1,15 @@
 machine:
   services:
     - docker
+  node:
+    version: 0.10.22
 dependencies:
   override:
-    - docker build -f docker/Dockerfile.build .
+    - npm install -g grunt
+    - npm install -g bower
+    - npm install
+    - bower install
+    - grunt build --force
 test:
   override:
     - cd dist && ls
