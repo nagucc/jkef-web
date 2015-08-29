@@ -1,0 +1,9 @@
+machine:
+  services:
+    - docker
+dependencies:
+  override:
+    - docker build -f docker/DOckerfile.build .
+test:
+  override:
+    - curl http://localhost:9000
