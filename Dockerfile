@@ -13,7 +13,7 @@ WORKDIR /src
 RUN npm install -g bower grunt-cli
 
 RUN npm install
-RUN bower install
+RUN bower install --allow-root
 RUN grunt build
 RUN rm -rf node_modules && rm -rf bower_components
 
