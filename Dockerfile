@@ -5,7 +5,7 @@ ADD .bowerrc /src/
 ADD .jshintrc /src/
 ADD .travis.yml /src/
 ADD *.json /src/
-ADD Gruntfile.js
+ADD Gruntfile.js /src/
 
 WORKDIR /src
 
