@@ -1,7 +1,12 @@
 FROM node
 
-RUN mkdir /src
-ADD * /src/
+ADD app /src/app
+ADD .bowerrc /src/
+ADD .jshintrc /src/
+ADD .travis.yml /src/
+ADD *.json /src/
+ADD Gruntfile.js
+
 WORKDIR /src
 
 
