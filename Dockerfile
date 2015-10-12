@@ -1,7 +1,7 @@
 FROM node
 
 RUN mkdir /src
-COPY ./* /src/
+ADD * /src/
 WORKDIR /src
 
 
