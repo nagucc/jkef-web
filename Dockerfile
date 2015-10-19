@@ -14,7 +14,7 @@ RUN npm install -g bower grunt-cli
 
 RUN npm install
 RUN bower install --allow-root
-RUN grunt build
+RUN grunt build --force
 RUN rm -rf node_modules && rm -rf bower_components
 
 CMD rm -rf /dist/* && cp -R /src/dist/. /dist
