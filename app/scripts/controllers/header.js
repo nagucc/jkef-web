@@ -9,11 +9,12 @@
  */
 angular.module('jkefWebApp')
   .controller('HeaderCtrl', function ($scope, auth, $rootScope) {
+
+    $scope.avatar = 'images/avatar.png';
+
   	$rootScope.promises = $rootScope.promises || {};
 
-    $rootScope.promises.me = auth.getMe();
-
-    $rootScope.promises.me.then(function (me) {
+    $rootScope.promises = auth.getMe().then(function (me) {
     	$rootScope.me = me;
     }, function (err) {
 
