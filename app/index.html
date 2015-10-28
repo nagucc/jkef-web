@@ -73,8 +73,8 @@
                     <ul class="nav ace-nav">
                         <!-- #section:basics/navbar.user_menu -->
                         <li class="grey">
-                            <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                                <img class="nav-user-photo" ng-src="{{avatar}}" alt="Jason's Photo" />
+                            <a data-toggle="dropdown" href="javascript://void(0)" class="dropdown-toggle">
+                                <img class="nav-user-photo" ng-src="{{me.avatar}}" alt="Jason's Photo" />
                                 <span class="user-info">
                                     <small>欢迎您, </small>
                                     {{me.name}}
@@ -98,10 +98,10 @@
                                     </a>
                                 </li>
 
-                                <li class="divider" ng-if={{me}}></li>
+                                <li class="divider" ng-if="me.userid"></li>
 
-                                <li ng-if={{me}}>
-                                    <a href="#" ng-click="actions.signOut()">
+                                <li ng-if="me.userid">
+                                    <a href="javascript://void(0)" ng-click="actions.signOut()">
                                         <i class="ace-icon fa fa-power-off"></i>
                                         注销
                                     </a>
