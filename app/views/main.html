@@ -1,38 +1,38 @@
 <div class="main-content-inner">
 
-          <!-- /section:basics/content.breadcrumbs -->
-          <div class="page-content">
+  <!-- /section:basics/content.breadcrumbs -->
+  <div class="page-content">
 
-            <!-- /section:settings.box -->
+    <!-- /section:settings.box -->
+    <div class="row">
+      <div class="col-xs-12">
+        <!-- PAGE CONTENT BEGINS -->
+        <img class="img-responsive center-block" src="images/nagusq.jpg" alt="家琨教育基金微信" >
+        <h3 class="text-center">微信关注我们</h3>
+
+        <div class="row">
+
+          <!-- 奖学金 -->
+          <div class="col-sm-4" ng-repeat="project in projects track by $index">
             <div class="row">
-              <div class="col-xs-12">
-                <!-- PAGE CONTENT BEGINS -->
-                <img class="img-responsive center-block" src="images/nagusq.jpg" alt="家琨教育基金微信" >
-                <h3 class="text-center">微信关注我们</h3>
+              <div class="col-xs-11 label label-lg label-info arrowed-in arrowed-right">
+                <b>{{project.name}}</b>
+              </div>
+            </div>
 
-                <div class="row">
-
-                  <!-- 奖学金 -->
-                  <div class="col-sm-4" ng-repeat="project in projects track by $index">
-                    <div class="row">
-                      <div class="col-xs-11 label label-lg label-info arrowed-in arrowed-right">
-                        <b>{{project.name}}</b>
-                      </div>
-                    </div>
-
-                    <div>
-                      <ul class="list-unstyled spaced">
-                        <li ng-repeat="desc in project.descs track by $index">
-                          <i class="ace-icon fa fa-caret-right blue"></i>{{desc}}
-                        </li>
-                      </ul>
-                    </div>
-                  </div><!-- /.col -->
-                </div>
-                <!-- PAGE CONTENT ENDS -->
-              </div><!-- /.col -->
-            </div><!-- /.row -->
-          </div><!-- /.page-content -->
+            <div>
+              <ul class="list-unstyled spaced">
+                <li ng-repeat="desc in project.descs track by $index">
+                  <i class="ace-icon fa fa-caret-right blue"></i>{{desc}}
+                </li>
+              </ul>
+            </div>
+          </div><!-- /.col -->
         </div>
+        <!-- PAGE CONTENT ENDS -->
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.page-content -->
+</div>
 
 
