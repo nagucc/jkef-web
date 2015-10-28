@@ -16,6 +16,7 @@ angular.module('jkefWebApp')
 
     $rootScope.promises = auth.getMe().then(function (me) {
     	$rootScope.me = me;
+        $scope.avatar = me.avatar;
     }, function (err) {
 
     	// 如果用户未登录
