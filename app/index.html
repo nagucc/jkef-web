@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
-    <title>Blank Page - Ace Admin</title>
+    <title>家琨教育基金</title>
 
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -57,7 +57,7 @@
                     <a href="#" class="navbar-brand">
                         <small>
                             <i class="fa fa-leaf"></i>
-                            家琨教育基金会
+                            家琨教育基金
                         </small>
                     </a>
 
@@ -76,8 +76,8 @@
                             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                                 <img class="nav-user-photo" ng-src="{{avatar}}" alt="Jason's Photo" />
                                 <span class="user-info">
-                                    <small>Welcome,</small>
-                                    Jason
+                                    <small>欢迎您, </small>
+                                    {{me.name}}
                                 </span>
 
                                 <i class="ace-icon fa fa-caret-down"></i>
@@ -98,12 +98,12 @@
                                     </a>
                                 </li>
 
-                                <li class="divider"></li>
+                                <li class="divider" ng-if={{me}}></li>
 
-                                <li>
-                                    <a href="#">
+                                <li ng-if={{me}}>
+                                    <a href="#" ng-click="actions.signOut()">
                                         <i class="ace-icon fa fa-power-off"></i>
-                                        Logout
+                                        注销
                                     </a>
                                 </li>
                             </ul>
@@ -255,7 +255,7 @@
         <!-- ace settings handler -->
         <script src="scripts/ace/ace-extra.js"></script>
         <!-- ace scripts -->
-        <script src="../assets/js/ace/elements.scroller.js"></script>
+        <!-- script src="../assets/js/ace/elements.scroller.js"></script -->
         <script src="scripts/ace/elements.colorpicker.js"></script>
         <script src="scripts/ace/elements.fileinput.js"></script>
         <script src="scripts/ace/elements.typeahead.js"></script>

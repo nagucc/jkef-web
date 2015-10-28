@@ -14,7 +14,7 @@ angular.module('jkefWebApp')
 
   	$rootScope.promises = $rootScope.promises || {};
 
-    $rootScope.promises = auth.getMe().then(function (me) {
+    $rootScope.promises.getMe = auth.getMe().then(function (me) {
     	$rootScope.me = me;
         $scope.avatar = me.avatar;
     }, function (err) {
@@ -30,4 +30,13 @@ angular.module('jkefWebApp')
 		    });
     	}
     });
+
+    $scope.actions = {
+      signOut: function () {
+        auth.signOut(function () {
+          delete $rootScope.promises.getMe;
+          delete $rootScope.me;
+        });
+      }
+    }
   });
