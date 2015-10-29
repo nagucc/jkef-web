@@ -31,6 +31,16 @@ angular
         templateUrl: 'views/member/edit.html',
         controller: 'MemberEditCtrl'
       })
+      .when('/acceptor/list', {
+        templateUrl: 'views/acceptor/list.html',
+        controller: 'AcceptorListCtrl',
+        controllerAs: 'acceptor/list'
+      })
+      .when('/projects/reading-room', {
+        templateUrl: 'views/projects/reading-rome.html',
+        controller: 'ProjectsReadingRomeCtrl',
+        controllerAs: 'projects/readingRome'
+      })
       .otherwise({
         redirectTo: '/'
       });

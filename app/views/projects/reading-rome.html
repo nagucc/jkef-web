@@ -1,0 +1,69 @@
+<div class="main-content-inner">
+
+	<!-- /section:basics/content.breadcrumbs -->
+	<div class="page-content">
+
+		<!-- /section:settings.box -->
+		<div class="page-header">
+			<h1>
+				纳古志愿者·电子阅览室
+				<small>
+					<i class="ace-icon fa fa-angle-double-right"></i>
+					爱生活， 爱阅读
+				</small>
+			</h1>
+		</div><!-- /.page-header -->
+
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- PAGE CONTENT BEGINS -->
+				<div>
+					<ul class="ace-thumbnails clearfix">
+						<!-- #section:pages/gallery -->
+						<li ng-repeat="book in books track by $index">
+							<a ng-href="{{book.alt}}" title="Photo Title" data-rel="colorbox" class="cboxElement">
+								<img height="150" alt="150x150" ng-src="{{book.images.large}}">
+							</a>
+
+							<div class="tags">
+								<span class="label-holder">
+									<span class="label label-info">breakfast</span>
+								</span>
+
+								<span class="label-holder">
+									<span class="label label-danger">fruits</span>
+								</span>
+
+								<span class="label-holder">
+									<span class="label label-success">toast</span>
+								</span>
+
+								<span class="label-holder">
+									<span class="label label-warning arrowed-in">diet</span>
+								</span>
+							</div>
+
+							<div class="tools">
+								<a href="#">
+									<i class="ace-icon fa fa-link"></i>
+								</a>
+
+								<a href="#">
+									<i class="ace-icon fa fa-paperclip"></i>
+								</a>
+
+								<a href="#">
+									<i class="ace-icon fa fa-pencil"></i>
+								</a>
+
+								<a href="#">
+									<i class="ace-icon fa fa-times red"></i>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div><!-- PAGE CONTENT ENDS -->
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.page-content -->
+</div>

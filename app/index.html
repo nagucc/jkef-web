@@ -20,7 +20,6 @@
     <!-- endbuild -->
 
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
     <!-- text fonts -->
     <link rel="stylesheet" href="styles/ace/ace-fonts.css" />
     <!-- ace styles -->
@@ -76,7 +75,6 @@
                             <a data-toggle="dropdown" href="javascript://void(0)" class="dropdown-toggle">
                                 <img class="nav-user-photo" ng-src="{{me.avatar}}" alt="Jason's Photo" />
                                 <span class="user-info">
-                                    <small>欢迎您, </small>
                                     {{me.name}}
                                 </span>
 
@@ -149,7 +147,7 @@
                     </li>
 
                     <li class="">
-                        <a href="index.html">
+                        <a href="#/project/reading-room">
                             <i class="menu-icon fa fa-tachometer"></i>
                             <span class="menu-text"> 电子阅览室 </span>
                         </a>
@@ -244,6 +242,9 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+        
+        
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
@@ -276,6 +277,8 @@
         <script src="scripts/ace/ace.settings-skin.js"></script>
         <script src="scripts/ace/ace.widget-on-reload.js"></script>
         <script src="scripts/ace/ace.searchbox-autocomplete.js"></script>
+        <script src="scripts/services/douban.js"></script>
+        <script src="scripts/controllers/projects/reading-rome.js"></script>
         <!-- endbuild -->
 </body>
 </html>
