@@ -31,7 +31,7 @@ angular
         templateUrl: 'views/member/edit.html',
         controller: 'MemberEditCtrl'
       })
-      .when('/acceptor/list', {
+      .when('/acceptors/list', {
         templateUrl: 'views/acceptor/list.html',
         controller: 'AcceptorListCtrl',
         controllerAs: 'acceptor/list'
@@ -40,6 +40,11 @@ angular
         templateUrl: 'views/projects/reading-rome.html',
         controller: 'ProjectsReadingRomeCtrl',
         controllerAs: 'projects/readingRome'
+      })
+      .when('/acceptors/new', {
+        templateUrl: 'views/acceptors/edit.html',
+        controller: 'AcceptorsAddCtrl',
+        controllerAs: 'acceptors/add'
       })
       .otherwise({
         redirectTo: '/'
