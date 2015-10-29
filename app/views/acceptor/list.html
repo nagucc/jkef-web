@@ -1,0 +1,54 @@
+<div class="main-content-inner">
+
+  <!-- /section:basics/content.breadcrumbs -->
+  <div class="page-content">
+
+    <!-- /section:settings.box -->
+    <div class="row">
+    	<form class="form-horizontal" role="form">
+    		<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> <i class="fa fa-filter"></i> </label>
+
+				<div class="col-sm-9">
+					<input type="text" id="form-field-1-1" placeholder="姓名 / 电话 / 家庭住址 / 证件号" class="form-control" ng-model="searchText">
+				</div>
+			</div>
+    	</form>
+      <div class="col-xs-12 col-sm-9 col-sm-offset-2 well" ng-repeat="acceptor in acceptors track by $index">
+		<h4 class="blue">
+			<i class="fa fa-user orange"></i>
+			<a ng-href="#/acceptor/{{acceptor._id}}" class="middle"> {{acceptor.name}} </a>
+		</h4>
+
+		<div class="profile-user-info">
+			<div class="profile-info-row">
+				<div class="profile-info-name"> 手机号 </div>
+
+				<div class="profile-info-value">
+					<span>{{acceptor.phone}}</span>
+				</div>
+			</div>
+
+			<div class="profile-info-row">
+				<div class="profile-info-name"> 家庭住址 </div>
+
+				<div class="profile-info-value">
+					<i class="fa fa-map-marker light-orange bigger-110"></i>
+					<span>{{acceptor.homeAddress}}</span>
+				</div>
+			</div>
+
+			<div class="profile-info-row">
+				<div class="profile-info-name"> 证件号码 </div>
+
+				<div class="profile-info-value">
+					<span>{{acceptor.idCard}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+    </div><!-- /.row -->
+  </div><!-- /.page-content -->
+</div>
+
+

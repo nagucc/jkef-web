@@ -1,10 +1,13 @@
 <!doctype html>
 <html class="no-js">
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
     <title>家琨教育基金</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -12,33 +15,238 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
+    <!-- build:css styles/vendor/fontawesome.css -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- endbuild -->
+
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    
+    <!-- text fonts -->
+    <link rel="stylesheet" href="styles/ace/ace-fonts.css" />
+    <!-- ace styles -->
+    <link rel="stylesheet" href="styles/ace/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
     <!-- endbuild -->
   </head>
-  <body ng-app="jkefWebApp">
+  <body ng-app="jkefWebApp" class="no-skin">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#/">首页</a></li>
-          <li><a ng-href="#/about">奖学金</a></li>
-          <li><a ng-href="#">助学金</a></li>
-          <li><a ng-href="#">其他项目</a></li>
-        </ul>
-        <h3 class="text-muted">家琨教育基金</h3>
-      </div>
+    <!-- #section:basics/navbar.layout -->
+        <div id="navbar" class="navbar navbar-default" ng-controller="HeaderCtrl">
+            <script type="text/javascript">
+                try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+            </script>
 
-      <div ng-view=""></div>
+            <div class="navbar-container" id="navbar-container">
+                <!-- #section:basics/sidebar.mobile.toggle -->
+                <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+                    <span class="sr-only">Toggle sidebar</span>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from nagu.cc</p>
-      </div>
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- /section:basics/sidebar.mobile.toggle -->
+                <div class="navbar-header pull-left" >
+                    <!-- #section:basics/navbar.layout.brand -->
+                    <a href="#" class="navbar-brand">
+                        <small>
+                            <i class="fa fa-leaf"></i>
+                            家琨教育基金
+                        </small>
+                    </a>
+
+                    <!-- /section:basics/navbar.layout.brand -->
+
+                    <!-- #section:basics/navbar.toggle -->
+
+                    <!-- /section:basics/navbar.toggle -->
+                </div>
+
+                <!-- #section:basics/navbar.dropdown -->
+                <div class="navbar-buttons navbar-header pull-right" role="navigation" ng-if="manage">
+                    <ul class="nav ace-nav">
+                        <!-- #section:basics/navbar.user_menu -->
+                        <li class="grey">
+                            <a data-toggle="dropdown" href="javascript://void(0)" class="dropdown-toggle">
+                                <img class="nav-user-photo" ng-src="{{me.avatar}}" alt="Jason's Photo" />
+                                <span class="user-info">
+                                    {{me.name}}
+                                </span>
+
+                                <i class="ace-icon fa fa-caret-down"></i>
+                            </a>
+
+                            <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                                <li>
+                                    <a href="#">
+                                        <i class="ace-icon fa fa-cog"></i>
+                                        Settings
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="profile.html">
+                                        <i class="ace-icon fa fa-user"></i>
+                                        Profile
+                                    </a>
+                                </li>
+
+                                <li class="divider" ng-if="me.userid"></li>
+
+                                <li ng-if="me.userid">
+                                    <a href="javascript://void(0)" ng-click="actions.signOut()">
+                                        <i class="ace-icon fa fa-power-off"></i>
+                                        注销
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- /section:basics/navbar.user_menu -->
+                    </ul>
+                </div>
+
+                <!-- /section:basics/navbar.dropdown -->
+            </div><!-- /.navbar-container -->
+        </div>
+
+        <!-- /section:basics/navbar.layout -->
+        <div class="main-container" id="main-container">
+            <script type="text/javascript">
+                try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+            </script>
+
+            <!-- #section:basics/sidebar -->
+            <div id="sidebar" class="sidebar                  responsive">
+                <script type="text/javascript">
+                    try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+                </script>
+
+                <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                        <button class="btn btn-success">
+                            <i class="ace-icon fa fa-signal"></i>
+                        </button>
+
+                        <button class="btn btn-info">
+                            <i class="ace-icon fa fa-pencil"></i>
+                        </button>
+
+                        <!-- #section:basics/sidebar.layout.shortcuts -->
+                        <button class="btn btn-warning">
+                            <i class="ace-icon fa fa-users"></i>
+                        </button>
+
+                        <button class="btn btn-danger">
+                            <i class="ace-icon fa fa-cogs"></i>
+                        </button>
+
+                        <!-- /section:basics/sidebar.layout.shortcuts -->
+                    </div>
+
+                    <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                        <span class="btn btn-success"></span>
+
+                        <span class="btn btn-info"></span>
+
+                        <span class="btn btn-warning"></span>
+
+                        <span class="btn btn-danger"></span>
+                    </div>
+                </div>
+                
+                <ul class="nav nav-list">
+                    <li class="">
+                        <a href="index.html">
+                            <i class="menu-icon fa fa-tachometer"></i>
+                            <span class="menu-text"> 奖学金 </span>
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="index.html">
+                            <i class="menu-icon fa fa-tachometer"></i>
+                            <span class="menu-text"> 助学金 </span>
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="#/projects/reading-room">
+                            <i class="menu-icon fa fa-tachometer"></i>
+                            <span class="menu-text"> 电子阅览室 </span>
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+
+                    <li class="">
+                        <a href="index.html">
+                            <i class="menu-icon fa fa-tachometer"></i>
+                            <span class="menu-text"> 其他项目 </span>
+                        </a>
+
+                        <b class="arrow"></b>
+                    </li>
+                </ul><!-- /.nav-list -->
+
+                <!-- #section:basics/sidebar.layout.minimize -->
+                <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                    <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+                </div>
+
+                <!-- /section:basics/sidebar.layout.minimize -->
+                <script type="text/javascript">
+                    try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+                </script>
+            </div>
+
+            <!-- /section:basics/sidebar -->
+            <div class="main-content">
+                <div class="main-content-inner" ng-view=""></div>
+            </div><!-- /.main-content -->
+
+            <div class="footer">
+                <div class="footer-inner">
+                    <!-- #section:basics/footer -->
+                    <div class="footer-content">
+                        <span class="bigger-120">
+                            <span class="blue bolder">Ace</span>
+                            Application &copy; 2013-2014
+                        </span>
+
+                        &nbsp; &nbsp;
+                        <span class="action-buttons">
+                            <a href="#">
+                                <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="ace-icon fa fa-rss-square orange bigger-150"></i>
+                            </a>
+                        </span>
+                    </div>
+
+                    <!-- /section:basics/footer -->
+                </div>
+            </div>
+
+            <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+                <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+            </a>
+        </div><!-- /.main-container -->
     </div>
 
 
@@ -50,6 +258,12 @@
     <script src="bower_components/json3/lib/json3.js"></script>
     <![endif]-->
     <!-- endbuild -->
+
+    <script type="text/javascript">
+        if('ontouchstart' in document.documentElement) document.write("<script src='scripts/ace/jquery.mobile.custom.js'>"+"<"+"/script>");
+    </script>
+
+
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -67,10 +281,45 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+        
+        
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/member/edit.js"></script>
+        <script src="scripts/services/auth.js"></script>
+        <script src="scripts/controllers/header.js"></script>
+        <script src="scripts/controllers/acceptor/list.js"></script>
+        <script src="scripts/services/acceptor.js"></script>
+        <!-- ace settings handler -->
+        <script src="scripts/ace/ace-extra.js"></script>
+        <!-- ace scripts -->
+        <!-- script src="../assets/js/ace/elements.scroller.js"></script -->
+        <script src="scripts/ace/elements.colorpicker.js"></script>
+        <script src="scripts/ace/elements.fileinput.js"></script>
+        <script src="scripts/ace/elements.typeahead.js"></script>
+        <script src="scripts/ace/elements.wysiwyg.js"></script>
+        <script src="scripts/ace/elements.spinner.js"></script>
+        <script src="scripts/ace/elements.treeview.js"></script>
+        <script src="scripts/ace/elements.wizard.js"></script>
+        <script src="scripts/ace/elements.aside.js"></script>
+        <script src="scripts/ace/ace.js"></script>
+        <script src="scripts/ace/ace.ajax-content.js"></script>
+        <script src="scripts/ace/ace.touch-drag.js"></script>
+        <script src="scripts/ace/ace.sidebar.js"></script>
+        <script src="scripts/ace/ace.sidebar-scroll-1.js"></script>
+        <script src="scripts/ace/ace.submenu-hover.js"></script>
+        <script src="scripts/ace/ace.widget-box.js"></script>
+        <script src="scripts/ace/ace.settings.js"></script>
+        <script src="scripts/ace/ace.settings-rtl.js"></script>
+        <script src="scripts/ace/ace.settings-skin.js"></script>
+        <script src="scripts/ace/ace.widget-on-reload.js"></script>
+        <script src="scripts/ace/ace.searchbox-autocomplete.js"></script>
+        <script src="scripts/services/douban.js"></script>
+        <script src="scripts/controllers/projects/reading-rome.js"></script>
+        <script src="scripts/controllers/acceptors/edit.js"></script>
+        <script src="scripts/controllers/acceptors/add.js"></script>
         <!-- endbuild -->
 </body>
 </html>
