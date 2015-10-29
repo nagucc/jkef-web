@@ -9,7 +9,6 @@
  */
 angular.module('jkefWebApp')
   .controller('MainCtrl', function ($scope, $rootScope) {
-    $rootScope.manage = true;
     $scope.projects = [{
     	name: '奖学金',
     	descs: ['为符合条件的中高考优秀者发放奖学金']

@@ -22,47 +22,35 @@
 						<!-- #section:pages/gallery -->
 						<li ng-repeat="book in books track by $index">
 							<a ng-href="{{book.alt}}" title="Photo Title" data-rel="colorbox" class="cboxElement">
-								<img height="150" alt="150x150" ng-src="{{book.images.large}}">
+								<img height="300" alt="{{book.title}}" ng-src="{{book.images.large}}">
 							</a>
 
 							<div class="tags">
 								<span class="label-holder">
-									<span class="label label-info">breakfast</span>
+									<span class="label label-info">{{book.tags[0].name}}</span>
 								</span>
-
 								<span class="label-holder">
-									<span class="label label-danger">fruits</span>
+									<span class="label label-danger">{{book.tags[1].name}}</span>
 								</span>
-
 								<span class="label-holder">
-									<span class="label label-success">toast</span>
+									<span class="label label-success">{{book.tags[2].name}}</span>
 								</span>
-
 								<span class="label-holder">
-									<span class="label label-warning arrowed-in">diet</span>
+									<span class="label label-warning">{{book.tags[3].name}}</span>
 								</span>
 							</div>
 
-							<div class="tools">
-								<a href="#">
-									<i class="ace-icon fa fa-link"></i>
-								</a>
-
-								<a href="#">
-									<i class="ace-icon fa fa-paperclip"></i>
-								</a>
-
-								<a href="#">
-									<i class="ace-icon fa fa-pencil"></i>
-								</a>
-
-								<a href="#">
-									<i class="ace-icon fa fa-times red"></i>
-								</a>
-							</div>
 						</li>
 					</ul>
 				</div><!-- PAGE CONTENT ENDS -->
+				<div class="center" ng-if="start < total">
+					<button type="button" class="btn btn-sm btn-primary btn-white btn-round"  ng-click="getBooks()">
+						<i class="ace-icon fa fa-rss bigger-150 middle orange2"></i>
+						<span class="bigger-110">显示更多</span>
+
+						<i class="icon-on-right ace-icon fa fa-arrow-right"></i>
+					</button>
+				</div>
 			</div><!-- /.col -->
 		</div><!-- /.row -->
 	</div><!-- /.page-content -->

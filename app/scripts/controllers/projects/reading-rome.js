@@ -9,9 +9,16 @@
  */
 angular.module('jkefWebApp')
   .controller('ProjectsReadingRomeCtrl', function ($scope, douban) {
-  	$scope.hello = 'hel';
-    douban.list(0, function (result) {
-    	$scope.books = result.books;
-    	$scope.$apply();
-    });
+  	$scope.getBooks = function () {
+  		douban.list($scope.start, function (result) {
+	    	$scope.books = $scope.books.concat(result.books);
+	    	$scope.start += result.count;
+	    	$scope.total = result.total;
+	    	$scope.$apply();
+	    });
+  	}
+
+  	$scope.start = 0;
+  	$scope.books = [];
+    $scope.getBooks();
   });
