@@ -46,6 +46,11 @@ angular
         controller: 'AcceptorsAddCtrl',
         controllerAs: 'acceptors/add'
       })
+      .when('/acceptors/detail', {
+        templateUrl: 'views/acceptors/detail.html',
+        controller: 'AcceptorsDetailCtrl',
+        controllerAs: 'acceptors/detail'
+      })
       .otherwise({
         redirectTo: '/'
       });
