@@ -10,7 +10,6 @@
 angular.module('jkefWebApp')
   .controller('AcceptorListCtrl', function (auth, $scope, $rootScope, acceptor) {
   	$rootScope.manage = true;
-
   	// 自动登录
   	var autoSignIn = function () {
   		// 生成登录按钮链接
