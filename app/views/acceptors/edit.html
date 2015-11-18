@@ -3,16 +3,23 @@
 	<div class="page-content">
 
 		<!-- /section:settings.box -->
-		<div class="page-header">
-			<h1>
-				新增受助者
-				<small>
-					<i class="ace-icon fa fa-angle-double-right"></i>
-					填写受助者信息
-				</small>
-			</h1>
-		</div><!-- /.page-header -->
-
+		<div class="row">
+			<div class="page-header pull-left">
+				<h1>
+					<span ng-if="acceptor._id">编辑{{acceptor.name}}的信息</span>
+					<span ng-if="!acceptor._id">新增受助者</span>
+					<small>
+						<i class="ace-icon fa fa-angle-double-right"></i>
+						填写受助者信息
+					</small>
+				</h1>
+			</div><!-- /.page-header -->
+			<div class="pull-right hidden-sm hidden-xs btn-group">
+			<a class="btn btn-xs btn-warning" href="#/acceptors/list">
+				<i class="ace-icon fa fa-users bigger-120"></i>
+			</a>
+		</div>
+		</div>
 		<div class="row">
 			<!-- 基本信息 -->
 			<div class="col-xs-12 col-sm-4">
@@ -31,7 +38,7 @@
 							<div>
 								<label for="form-field-8">手机号</label>
 
-								<input class="form-control" ng-model="acceptor.phone" id="form-field-8" type="number" placeholder="手机号"></input>
+								<input class="form-control" ng-model="acceptor.phone" id="form-field-8" type="text" placeholder="手机号"></input>
 							</div>
 							<div>
 								<label for="form-field-8">性别</label>
@@ -64,6 +71,10 @@
 
 								<input ng-model="acceptor.wxent_UserIds[0].userId" class="form-control" id="form-field-8" placeholder=""></input>
 							</div>
+							<div>
+								<input type="checkbox" ng-model="acceptor.isRecommander" class="" id="form-field-recommander" placeholder=""></input>
+								<label for="form-field-recommander">助学金推荐人</label>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -86,7 +97,7 @@
 							<div>
 								<label for="form-field-8">毕业年份</label>
 
-								<input class="form-control" id="form-field-8" placeholder="Default Text" type="number" min="2006" max="2050"  ng-model="acceptor.highSchool.admissionYear"></input>
+								<input class="form-control" id="form-field-8" placeholder="Default Text" type="number"  ng-model="acceptor.highSchool.admissionYear"></input>
 							</div>
 						</div>
 					</div>
@@ -115,7 +126,7 @@
 							<div>
 								<label for="form-field-8">毕业年份</label>
 
-								<input class="form-control" id="form-field-8" placeholder="Default Text" type="number" min="2006" max="2050" ng-model="acceptor.bachelorSchool.admissionYear"></input>
+								<input class="form-control" id="form-field-8" placeholder="Default Text" type="number" ng-model="acceptor.bachelorSchool.admissionYear"></input>
 							</div>
 						</div>
 					</div>
@@ -149,7 +160,7 @@
 							<div>
 								<label for="form-field-8">毕业年份</label>
 
-								<input class="form-control" id="form-field-8" placeholder="Default Text" type="number" min="2006" max="2050" ng-model="acceptor.masterSchool.admissionYear"></input>
+								<input class="form-control" id="form-field-8" placeholder="Default Text" type="number" ng-model="acceptor.masterSchool.admissionYear"></input>
 							</div>
 						</div>
 					</div>
@@ -183,13 +194,39 @@
 							<div>
 								<label for="form-field-8">毕业年份</label>
 
-								<input class="form-control" id="form-field-8" placeholder="Default Text" type="number" min="2006" max="2050" ng-model="acceptor.doctorSchool.admissionYear"></input>
+								<input class="form-control" id="form-field-8" placeholder="Default Text" type="number" ng-model="acceptor.doctorSchool.admissionYear"></input>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.span -->
+
+			<!-- 工作单位信息 -->
+			<div class="col-xs-12 col-sm-4">
+				<div class="widget-box">
+					<div class="widget-header">
+						<h4 class="widget-title">工作阶段信息</h4>
+					</div>
+
+					<div class="widget-body">
+						<div class="widget-main">
+							<div>
+								<label for="form-field-8">单位名称</label>
+
+								<input class="form-control" id="form-field-8" placeholder="Default Text" ng-model="acceptor.company.name"></input>
+							</div>
+							<div>
+								<label for="form-field-8">职称／职务</label>
+
+								<input class="form-control" id="form-field-8" placeholder="Default Text" ng-model="acceptor.company.title"></input>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div><!-- /.span -->
 		</div>
+
+		
 
 		<div class="clearfix form-actions row">
 			<div class="col-md-offset-3 col-md-9">

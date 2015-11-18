@@ -46,10 +46,20 @@ angular
         controller: 'AcceptorsAddCtrl',
         controllerAs: 'acceptors/add'
       })
-      .when('/acceptors/detail', {
+      .when('/acceptors/edit/:id', {
+        templateUrl: 'views/acceptors/edit.html',
+        controller: 'AcceptorsEditCtrl',
+        controllerAs: 'acceptors/edit'
+      })
+      .when('/acceptors/detail/:id', {
         templateUrl: 'views/acceptors/detail.html',
         controller: 'AcceptorsDetailCtrl',
         controllerAs: 'acceptors/detail'
+      })
+      .when('/acceptors/addRecord', {
+        templateUrl: 'views/acceptors/addrecord.html',
+        controller: 'AcceptorsAddrecordCtrl',
+        controllerAs: 'acceptors/addRecord'
       })
       .otherwise({
         redirectTo: '/'
