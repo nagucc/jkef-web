@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name jkefWebApp.controller:AcceptorsEditCtrl
+ * @name jkefWebApp.controller:AcceptorsAddrecordCtrl
  * @description
- * # AcceptorsEditCtrl
+ * # AcceptorsAddrecordCtrl
  * Controller of the jkefWebApp
  */
 angular.module('jkefWebApp')
-  .controller('AcceptorsEditCtrl', function () {
+  .controller('AcceptorsAddrecordCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

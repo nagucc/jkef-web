@@ -12,7 +12,8 @@ angular.module('jkefWebApp')
     var url = {
     	list: 'http://api.jkef.nagu.cc/acceptors/list',
         add: 'http://api.jkef.nagu.cc/acceptors/',
-        get: 'http://api.jkef.nagu.cc/acceptors/'
+        get: 'http://api.jkef.nagu.cc/acceptors/',
+        update: 'http://api.jkef.nagu.cc/acceptors/'
     };
 
     return {
@@ -34,6 +35,14 @@ angular.module('jkefWebApp')
         },
         get: function (id, success, fail) {
             $http.get(url.get + id, {
+                withCredentials: true
+            }).success(function (data) {
+                if(data.ret === 0) success(data.data);
+                else fail(data);
+            }).error(fail);
+        },
+        update: function (acceptor, success, fail) {
+            $http.post(url.update, acceptor, {
                 withCredentials: true
             }).success(function (data) {
                 if(data.ret === 0) success(data.data);
