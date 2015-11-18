@@ -20,6 +20,16 @@ angular.module('jkefWebApp')
       $rootScope.me = me;
     });
 
+    // 自动登录
+    $rootScope.autoSignIn = function () {
+      // 生成登录按钮链接
+      auth.getAuthorizeUrl().then(function (data) {
+        window.location = data;
+      }, function (err) {
+        alert(err.msg);
+      });
+    }
+
     $scope.actions = {
       signOut: function () {
         auth.signOut(function () {
@@ -30,5 +40,5 @@ angular.module('jkefWebApp')
           $location.url('/');
         });
       }
-    }
+    };
   });
