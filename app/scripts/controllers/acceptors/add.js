@@ -8,7 +8,7 @@
  * Controller of the jkefWebApp
  */
 angular.module('jkefWebApp')
-  .controller('AcceptorsAddCtrl', function ($scope, acceptor, $rootScope) {
+  .controller('AcceptorsAddCtrl', function ($scope, acceptor, $rootScope, $location) {
     $rootScope.manage = true;
   	var defaulAcc = {
   		highSchool: {},
@@ -18,7 +18,9 @@ angular.module('jkefWebApp')
   		wxent_UserIds: [{
   			corpName: '纳古志愿者'
   		}],
-      idCard: {}
+      idCard: {},
+      isRecommander: false,
+      company: {}
   	};
 
   	$scope.acceptor = defaulAcc;
@@ -30,8 +32,7 @@ angular.module('jkefWebApp')
   				return;
   			}
   			acceptor.add(acc, function (data) {
-  				alert('添加成功');
-  				$scope.acceptor = defaulAcc;
+  				$location.url('/acceptors/detail/' + data._id);
   			}, function (result) {
   				console.log(result.err);
   			});
@@ -48,8 +49,8 @@ angular.module('jkefWebApp')
       }, function (err) {
         // 如果用户未登录，自动使用微信登录
         if(err.ret === -2){
-          autoSignIn();
+          $rootScope.autoSignIn();
         }
       });
-    else autoSignIn();
+    else $rootScope.autoSignIn();
   });
