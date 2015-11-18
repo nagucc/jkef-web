@@ -8,10 +8,12 @@
  * Controller of the jkefWebApp
  */
 angular.module('jkefWebApp')
-  .controller('AcceptorsDetailCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('AcceptorsDetailCtrl', function ($scope, acceptor, $routeParams) {
+    var accId = $routeParams.id;
+    if(!accId) return;
+    acceptor.get(accId, function (acc) {
+    	$scope.acceptor = acc;
+    }, function (result) {
+    	alert(result.msg);
+    });
   });
